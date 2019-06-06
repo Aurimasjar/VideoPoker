@@ -13,10 +13,16 @@ public class VideoPokerController extends Thread {
     }
 
     public void initDeck() {
-        for(int i = 0; i < 4; i++) {
-            for(int j = 0; j < 13; j++) {
-                deck.add(new Card(i, j));
+        try {
+            for (int i = 0; i < 4; i++) {
+                for (int j = 0; j < 13; j++) {
+                    deck.add(new Card(i, j));
+                }
             }
+        }
+        catch (Exception e) {
+            System.out.println("Error: failed to fill deck with cards");
+            System.exit(1);
         }
     }
 

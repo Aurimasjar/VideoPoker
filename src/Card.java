@@ -4,7 +4,12 @@ public class Card {
     private String card;    /** 2-10, Jack, Queen, King, Ace **/
     private int weight;     /** 1-13 (needed for sorting and comparison) **/
 
-    public Card(int colorNr, int cardNr) {
+    public Card(int colorNr, int cardNr) throws IllegalArgumentException {
+
+        if(colorNr < 0 || colorNr > 3 || cardNr < 0 || cardNr > 12) {
+            throw new IllegalArgumentException("Color number values are from 0 to 3, card number values are from 0 to 12");
+        }
+
         setWeight(cardNr + 1);
         setColor(colorNr);
         setCard(cardNr);

@@ -1,5 +1,4 @@
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 import java.util.Comparator;
 
@@ -216,7 +215,7 @@ public class CombinationChecker {
     }
 
     boolean allEqualHigh(int x1, int x2) {
-        if(x1 == x2 && (x1 >= 10 || x1 == 1)) {
+        if(x1 == x2 && (x1 > 10 || x1 == 1)) {
             return true;
         }
         return false;
